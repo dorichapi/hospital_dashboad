@@ -66,6 +66,14 @@
             margin-top: 20px;
             text-align: center;
             border: 1px solid #ccc;
+            height: 200px;  /* 高さを半分程度に調整 */
+            overflow-y: auto;  /* コンテンツが多い場合スクロール可能に */
+        }
+
+        textarea {
+            width: 90%;
+            height: 80px;  /* テキストエリアの高さも調整 */
+            resize: vertical;
         }
     </style>
 </head>
@@ -96,7 +104,7 @@
 
             {% if authenticated %}
             <form action="/save_strategy" method="POST">
-                <textarea name="strategy" rows="5" cols="50">{{ strategy_content }}</textarea><br>
+                <textarea name="strategy">{{ strategy_content }}</textarea><br>
                 <button type="submit">保存</button>
             </form>
             {% else %}

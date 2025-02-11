@@ -2,3 +2,4 @@ Flask==2.1.0
 gspread==5.4.0
 oauth2client==4.1.3
 gunicorn==20.1.0
+werkzeug==2.0.3  # ← ここがポイント

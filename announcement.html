@@ -1,0 +1,22 @@
+<!-- templates/announcement.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>伝達事項投稿</title>
+</head>
+<body>
+    <h1>伝達事項投稿</h1>
+    <form method="POST" action="{{ url_for('announcement') }}">
+        <label for="title">タイトル:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="content">内容:</label><br>
+        <textarea id="content" name="content" rows="5" cols="40" required></textarea><br><br>
+        
+        <button type="submit">投稿する</button>
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">トップページに戻る</a>
+</body>
+</html>

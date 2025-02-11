@@ -1,0 +1,40 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>経営指標ダッシュボード</title>
+    <!-- 必要ならCSSやJSファイルの読み込みを追加 -->
+</head>
+<body>
+    <h1>経営指標ダッシュボード</h1>
+    <a href="{{ url_for('index') }}">掲示板に戻る</a>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>日付</th>
+                <th>病床利用率 (%)</th>
+                <th>救急車搬入数</th>
+                <th>入院患者数</th>
+                <th>退院予定数</th>
+                <th>一般病棟在院数</th>
+                <th>集中治療室在院数</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row['日付'] }}</td>
+                <td>{{ row['病床利用率 (%)'] }}</td>
+                <td>{{ row['救急車搬入数'] }}</td>
+                <td>{{ row['入院患者数'] }}</td>
+                <td>{{ row['退院予定数'] }}</td>
+                <td>{{ row['一般病棟在院数'] }}</td>
+                <td>{{ row['集中治療室在院数'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

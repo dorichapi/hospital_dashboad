@@ -1,9 +1,9 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f9f9f9;
     display: flex;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     height: 100vh;
 }
 
@@ -49,56 +49,35 @@ body {
     overflow-y: auto;
 }
 
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
 .iframe-container {
     width: 100%;
     height: 300px;
     border: none;
-    margin-bottom: 20px;
 }
 
-/* 指標カードのグリッドレイアウト */
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.metric-card {
-    background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ccc;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* 経営戦略室の戦略カード */
 .strategy {
     background-color: #fff;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 15px;
     text-align: center;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    height: 150px; /* 高さを調整して全体表示 */
-    overflow-y: auto; /* 内容が多い場合はスクロール */
+    margin-top: auto;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .strategy textarea {
     width: 90%;
-    height: 60px; /* テキストエリアの高さを調整 */
-    resize: none; /* サイズ変更を無効化 */
-}
-
-.strategy button {
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: #ff7f27;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.strategy button:hover {
-    background-color: #e66a1e;
+    height: 50px;
+    margin: 10px 0;
+    resize: none;
 }

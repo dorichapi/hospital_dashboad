@@ -26,12 +26,12 @@
 
         <!-- 指標カードをグリッドレイアウトで表示 -->
         <div class="metrics-grid">
-            <div class="metric-card">病床利用率: {{ bed_utilization }}%</div>
-            <div class="metric-card">救急車搬入: {{ ambulance_count }}件</div>
-            <div class="metric-card">入院患者: {{ inpatient_count }}人</div>
-            <div class="metric-card">退院予定: {{ discharge_schedule }}人</div>
-            <div class="metric-card">一般病棟在院数: {{ general_ward }}人</div>
-            <div class="metric-card">集中治療室在院数: {{ icu_count }}人</div>
+            <div class="metric-card">{{ bed_utilization }}%<br>病床利用率</div>
+            <div class="metric-card">{{ ambulance_count }}件<br>救急車搬入</div>
+            <div class="metric-card">{{ inpatient_count }}人<br>入院患者数</div>
+            <div class="metric-card">{{ discharge_schedule }}人<br>退院予定数</div>
+            <div class="metric-card">{{ general_ward }}人<br>一般病棟在院数</div>
+            <div class="metric-card">{{ icu_count }}人<br>集中治療室在院数</div>
         </div>
 
         <!-- 経営戦略室の戦略 -->

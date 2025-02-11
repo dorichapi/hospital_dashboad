@@ -22,7 +22,12 @@
 
     <div class="content">
         <div class="dashboard-grid">
-            <iframe src="https://dorichapi.github.io/Rev3_dashboard/" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget1" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget2" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget3" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget4" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget5" class="iframe-container"></iframe>
+            <iframe src="https://example.com/widget6" class="iframe-container"></iframe>
         </div>
 
         <div class="strategy">
@@ -34,7 +39,7 @@
 
             {% if authenticated %}
             <form action="/save_strategy" method="POST">
-                <textarea name="strategy">{{ strategy_content }}</textarea>
+                <textarea name="strategy" rows="5" cols="50">{{ strategy_content }}</textarea><br>
                 <button type="submit">保存</button>
             </form>
             {% else %}

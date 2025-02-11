@@ -21,10 +21,15 @@
     </div>
 
     <div class="content">
-        <!-- ダッシュボード -->
-        <iframe src="https://dorichapi.github.io/Rev3_dashboard/" class="iframe-container"></iframe>
+        <div class="dashboard-grid">
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/bed_utilization" class="iframe-container"></iframe>
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/ambulance_count" class="iframe-container"></iframe>
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/inpatient_count" class="iframe-container"></iframe>
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/discharge_schedule" class="iframe-container"></iframe>
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/general_ward" class="iframe-container"></iframe>
+            <iframe src="https://dorichapi.github.io/Rev3_dashboard/icu_count" class="iframe-container"></iframe>
+        </div>
 
-        <!-- 経営戦略室の戦略 -->
         <div class="strategy">
             <h2>経営戦略室の戦略</h2>
             <form action="/update_strategy" method="POST">
@@ -34,7 +39,7 @@
 
             {% if authenticated %}
             <form action="/save_strategy" method="POST">
-                <textarea name="strategy" rows="3">{{ strategy_content }}</textarea><br>
+                <textarea name="strategy">{{ strategy_content }}</textarea>
                 <button type="submit">保存</button>
             </form>
             {% else %}

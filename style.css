@@ -1,15 +1,12 @@
-/* 全体のベーススタイル */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
+    font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     height: 100vh;
-    overflow: hidden;
 }
 
-/* サイドバー */
 .sidebar {
     background-color: #fff;
     padding: 20px;
@@ -27,14 +24,14 @@ body {
 .button-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
 }
 
 .button {
     background-color: white;
     border: 2px solid #333;
-    padding: 8px;
+    padding: 10px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -44,44 +41,35 @@ body {
     background-color: #ffebcc;
 }
 
-/* コンテンツ領域 */
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     overflow-y: auto;
 }
 
-/* ダッシュボードの表示領域 */
 .iframe-container {
-    border: none;
     width: 100%;
-    height: 300px; 
+    height: 300px;
+    border: none;
+    margin-bottom: 20px;
 }
 
 /* 指標カードのグリッドレイアウト */
 .metrics-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 横3列 */
-    grid-template-rows: repeat(2, auto);  /* 縦2行 */
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 20px 0;
 }
 
 .metric-card {
     background-color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* 経営戦略室の戦略カード */
@@ -91,43 +79,26 @@ body {
     margin-top: 10px;
     text-align: center;
     border: 1px solid #ccc;
-    height: 150px; 
-    overflow-y: auto;
-    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 150px; /* 高さを調整して全体表示 */
+    overflow-y: auto; /* 内容が多い場合はスクロール */
 }
 
-/* テキストエリア */
-textarea {
+.strategy textarea {
     width: 90%;
-    height: 60px;
-    resize: vertical;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: 60px; /* テキストエリアの高さを調整 */
+    resize: none; /* サイズ変更を無効化 */
 }
 
-/* 入力フィールドとボタン */
-input[type="password"], button {
-    padding: 6px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
+.strategy button {
+    margin-top: 5px;
+    padding: 5px 10px;
     background-color: #ff7f27;
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #e5671c;
-}
-
-/* テキストと見出し */
-h1, h2 {
-    margin: 5px 0;
-    color: #333;
+.strategy button:hover {
+    background-color: #e66a1e;
 }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みんなの経営掲示板</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h1 {
+            background-color: #ff7f27;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: white;
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ffebcc;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .iframe-container {
+            flex: 1;
+            border: none;
+        }
+
+        .strategy {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h1>みんなの経営掲示板</h1>
+        <p>更新日: 2025年2月10日（月）</p>
+
+        <div class="button-container">
+            <div class="button" onclick="location.href='{{ url_for('important_metrics_1') }}'">重要指標 1</div>
+            <div class="button" onclick="location.href='{{ url_for('important_metrics_2') }}'">重要指標 2</div>
+            <div class="button" onclick="location.href='{{ url_for('surgeries') }}'">手術一覧</div>
+            <div class="button" onclick="location.href='{{ url_for('emergency') }}'">救急外来</div>
+            <div class="button" onclick="location.href='{{ url_for('announcement') }}'">伝達事項投稿</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- ダッシュボードを埋め込み -->
+        <iframe src="https://dorichapi.github.io/Rev3_dashboard/" class="iframe-container" width="100%" height="500" style="border:none;"></iframe>
+
+        <div class="strategy">
+            <h2>経営戦略室の戦略</h2>
+            <form action="/update_strategy" method="POST">
+                <input type="password" name="password" placeholder="パスワードを入力" required>
+                <button type="submit">認証</button>
+            </form>
+
+            {% if authenticated %}
+            <form action="/save_strategy" method="POST">
+                <textarea name="strategy" rows="5" cols="50">{{ strategy_content }}</textarea><br>
+                <button type="submit">保存</button>
+            </form>
+            {% else %}
+            <p>{{ strategy_content }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

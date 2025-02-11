@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}病院ダッシュボード{% endblock %}</title>
+  <!-- 外部CSSの読み込み（後述する style.css） -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}
+  <!-- ページ固有のhead要素があればここに記述 -->
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <h1>病院ダッシュボード</h1>
+  </header>
+  <nav>
+    <a href="{{ url_for('index') }}">掲示板</a>
+    <a href="{{ url_for('dashboard') }}">経営指標ダッシュボード</a>
+  </nav>
+  <main>
+    {% block content %}
+    <!-- 各テンプレートごとのコンテンツはここに挿入される -->
+    {% endblock %}
+  </main>
+  <footer>
+    <p>&copy; 2025 病院名</p>
+  </footer>
+</body>
+</html>

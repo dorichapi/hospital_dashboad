@@ -21,9 +21,20 @@
     </div>
 
     <div class="content">
-        <!-- ダッシュボードを埋め込み -->
+        <!-- ダッシュボード -->
         <iframe src="https://dorichapi.github.io/Rev3_dashboard/" class="iframe-container"></iframe>
 
+        <!-- 指標カードをグリッドレイアウトで表示 -->
+        <div class="metrics-grid">
+            <div class="metric-card">病床利用率: {{ bed_utilization }}%</div>
+            <div class="metric-card">救急車搬入: {{ ambulance_count }}件</div>
+            <div class="metric-card">入院患者: {{ inpatient_count }}人</div>
+            <div class="metric-card">退院予定: {{ discharge_schedule }}人</div>
+            <div class="metric-card">一般病棟在院数: {{ general_ward }}人</div>
+            <div class="metric-card">集中治療室在院数: {{ icu_count }}人</div>
+        </div>
+
+        <!-- 経営戦略室の戦略 -->
         <div class="strategy">
             <h2>経営戦略室の戦略</h2>
             <form action="/update_strategy" method="POST">
